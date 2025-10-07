@@ -1,0 +1,19 @@
+{
+    "name": "http-attack-detection-system",
+    "version": "1.0.0",
+    "description": "Interactive demo of HTTP-based attack detection system with multi-layer hybrid architecture",
+    "main": "index.html",
+    "scripts": {
+        "start": "python3 -m http.server 8000",
+        "dev": "python3 -m http.server 8000"
+    },
+    "keywords": [
+        "cybersecurity",
+        "http-attack-detection",
+        "machine-learning",
+        "web-security",
+        "threat-detection"
+    ],
+    "author": "Your Name",
+    "license": "MIT"
+}

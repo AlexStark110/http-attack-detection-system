@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Attack Detection System - Interactive Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>HTTP Attack Detection System</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#workflow" class="nav-link" data-section="workflow">
+                    <i class="fas fa-project-diagram"></i> Workflow
+                </a>
+                <a href="#demo" class="nav-link" data-section="demo">
+                    <i class="fas fa-play-circle"></i> Live Demo
+                </a>
+                <a href="#dashboard" class="nav-link" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i> Dashboard
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="container">
+            <div class="hero">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Intelligent HTTP Attack Detection</span>
+                </h1>
+                <p class="hero-subtitle">
+                    AI-Powered Multi-Layer Security System for Real-Time URL-Based Threat Detection
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">11+</div>
+                        <div class="stat-label">Attack Types</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">95-100%</div>
+                        <div class="stat-label">Detection Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">&lt;1ms</div>
+                        <div class="stat-label">Response Time</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2-Layer</div>
+                        <div class="stat-label">Hybrid Engine</div>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="navigateToSection('workflow')">
+                        <i class="fas fa-arrow-right"></i> View Workflow
+                    </button>
+                    <button class="btn btn-secondary" onclick="navigateToSection('demo')">
+                        <i class="fas fa-play"></i> Try Live Demo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Attack Types Grid -->
+            <div class="attack-types">
+                <h2 class="section-title">Detected Attack Types</h2>
+                <div class="attack-grid">
+                    <div class="attack-card" data-attack="sql-injection">
+                        <i class="fas fa-database"></i>
+                        <h3>SQL Injection</h3>
+                        <p>Union, Blind, Time-based, Error-based</p>
+                    </div>
+                    <div class="attack-card" data-attack="xss">
+                        <i class="fas fa-code"></i>
+                        <h3>Cross-Site Scripting (XSS)</h3>
+                        <p>Reflected, Stored, DOM-based</p>
+                    </div>
+                    <div class="attack-card" data-attack="traversal">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>Directory Traversal</h3>
+                        <p>Path manipulation attacks</p>
+                    </div>
+                    <div class="attack-card" data-attack="command-injection">
+                        <i class="fas fa-terminal"></i>
+                        <h3>Command Injection</h3>
+                        <p>OS command execution</p>
+                    </div>
+                    <div class="attack-card" data-attack="ssrf">
+                        <i class="fas fa-server"></i>
+                        <h3>SSRF</h3>
+                        <p>Server-side request forgery</p>
+                    </div>
+                    <div class="attack-card" data-attack="lfi-rfi">
+                        <i class="fas fa-file-import"></i>
+                        <h3>LFI/RFI</h3>
+                        <p>File inclusion attacks</p>
+                    </div>
+                    <div class="attack-card" data-attack="brute-force">
+                        <i class="fas fa-key"></i>
+                        <h3>Brute Force</h3>
+                        <p>Credential stuffing</p>
+                    </div>
+                    <div class="attack-card" data-attack="hpp">
+                        <i class="fas fa-link"></i>
+                        <h3>HTTP Parameter Pollution</h3>
+                        <p>Parameter manipulation</p>
+                    </div>
+                    <div class="attack-card" data-attack="xxe">
+                        <i class="fas fa-file-code"></i>
+                        <h3>XXE Injection</h3>
+                        <p>XML external entity</p>
+                    </div>
+                    <div class="attack-card" data-attack="webshell">
+                        <i class="fas fa-bomb"></i>
+                        <h3>Web Shell Upload</h3>
+                        <p>cmd.jsp, backdoor.asp</p>
+                    </div>
+                    <div class="attack-card" data-attack="typosquatting">
+                        <i class="fas fa-mask"></i>
+                        <h3>Typosquatting</h3>
+                        <p>URL spoofing attacks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section id="workflow" class="section">
+        <div class="container">
+            <h1 class="section-title">System Workflow Architecture</h1>
+            <p class="section-subtitle">Hybrid Multi-Layer Detection Pipeline</p>
+            
+            <div class="workflow-container">
+                <div class="workflow-canvas">
+                    <!-- Layer 1: Request Ingestion -->
+                    <div class="workflow-stage" data-stage="1">
+                        <div class="stage-header">
+                            <div class="stage-number">1</div>
+                            <h3>Request Ingestion Layer</h3>
+                        </div>
+                        <div class="stage-content">
+                            <div class="module pcap-module">
+                                <i class="fas fa-file-upload"></i>
+                                <h4>PCAP File Upload</h4>
+                                <p>scapy/pyshark</p>
+                                <div class="data-flow-indicator"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flow-arrow">
+                        <div class="arrow-line"></div>
+                        <div class="arrow-head"></div>
+                    </div>
+
+                    <!-- Layer 2: Preprocessing -->
+                    <div class="workflow-stage" data-stage="2">
+                        <div class="stage-header">
+                            <div class="stage-number">2</div>
+                            <h3>Preprocessing Module</h3>
+                        </div>
+                        <div class="stage-content preprocessing">
+                            <div class="module">
+                                <i class="fas fa-cog"></i>
+                                <h4>Extract HTTP Components</h4>
+                                <ul>
+                                    <li>Method, Path, Headers</li>
+                                    <li>Query Params, Body</li>
+                                </ul>
+                            </div>
+                            <div class="module">
+                                <i class="fas fa-link"></i>
+                                <h4>URL Decode & Normalize</h4>
+                            </div>
+                            <div class="module">
+                                <i class="fas fa-tools"></i>
+                                <h4>Feature Engineering</h4>
+                                <ul>
+                                    <li>URL length & entropy</li>
+                                    <li>Suspicious keywords</li>
+                                    <li>Header anomalies</li>
+                                    <li>Param count & depth</li>
+                                    <li>Encoding detection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow with Decision -->
+                    <div class="flow-arrow">
+                        <div class="arrow-line"></div>
+                        <div class="arrow-head"></div>
+                    </div>
+
+                    <!-- Layer 3: Rule-Based Engine -->
+                    <div class="workflow-stage rule-based" data-stage="3">
+                        <div class="stage-header">
+                            <div class="stage-number">3</div>
+                            <h3>Rule-Based Engine (Layer 1)</h3>
+                            <span class="badge fast-path">Fast Path: &lt;1ms</span>
+                        </div>
+                        <div class="stage-content">
+                            <div class="module">
+                                <i class="fas fa-shield-virus"></i>
+                                <h4>Signature Matching</h4>
+                                <ul>
+                                    <li>Regex patterns</li>
+                                    <li>Payload detection</li>
+                                    <li>Blacklist/Whitelist</li>
+                                    <li>IP filtering</li>
+                                </ul>
+                            </div>
+                            <div class="decision-diamond">
+                                <div class="diamond-shape">
+                                    <span>Rule<br>Match?</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conditional Branches -->
+                    <div class="branch-container">
+                        <div class="branch high-confidence">
+                            <div class="branch-label">YES<br>70-80% cases</div>
+                            <div class="flow-arrow short">
+                                <div class="arrow-line"></div>
+                                <div class="arrow-head"></div>
+                            </div>
+                            <div class="decision-box high-conf-box">
+                                <i class="fas fa-check-circle"></i>
+                                <h4>HIGH CONFIDENCE</h4>
+                                <p>Score: 0.95-1.0</p>
+                                <p class="action">Action: BLOCK + Alert</p>
+                            </div>
+                        </div>
+                        
+                        <div class="branch novel-evasive">
+                            <div class="branch-label">NO<br>Novel/Evasive</div>
+                            <div class="flow-arrow short">
+                                <div class="arrow-line"></div>
+                                <div class="arrow-head"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Layer 4: ML Detection Engine -->
+                    <div class="workflow-stage ml-engine" data-stage="4">
+                        <div class="stage-header">
+                            <div class="stage-number">4</div>
+                            <h3>ML Detection Engine (Layer 2)</h3>
+                            <span class="badge ml-path">Smart Path: 1-5ms</span>
+                        </div>
+                        <div class="stage-content">
+                            <div class="module">
+                                <i class="fas fa-brain"></i>
+                                <h4>Random Forest Classifier</h4>
+                                <p><strong>Input Features:</strong></p>
+                                <ul>
+                                    <li>Engineered features</li>
+                                    <li>Character n-grams (2-4)</li>
+                                    <li>Token features</li>
+                                </ul>
+                                <p><strong>Output:</strong></p>
+                                <p>Attack probabilities + confidence per type</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flow-arrow">
+                        <div class="arrow-line"></div>
+                        <div class="arrow-head"></div>
+                    </div>
+
+                    <!-- Layer 5: Scoring & Decision -->
+                    <div class="workflow-stage scoring" data-stage="5">
+                        <div class="stage-header">
+                            <div class="stage-number">5</div>
+                            <h3>Scoring & Decision</h3>
+                        </div>
+                        <div class="stage-content">
+                            <div class="module">
+                                <i class="fas fa-calculator"></i>
+                                <h4>Aggregate L1 + L2</h4>
+                                <ul>
+                                    <li>&gt;0.9: BLOCK + Alert</li>
+                                    <li>0.7-0.9: CHALLENGE + Log</li>
+                                    <li>0.5-0.7: LOG + Monitor</li>
+                                    <li>&lt;0.5: ALLOW + Basic log</li>
+                                </ul>
+                                <p><strong>Track:</strong> IP, Attack Type, Timestamp, Action Taken</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flow-arrow">
+                        <div class="arrow-line"></div>
+                        <div class="arrow-head"></div>
+                    </div>
+
+                    <!-- Layer 6: Logging & Storage -->
+                    <div class="workflow-stage storage" data-stage="6">
+                        <div class="stage-header">
+                            <div class="stage-number">6</div>
+                            <h3>Logging & Storage</h3>
+                        </div>
+                        <div class="stage-content">
+                            <div class="module">
+                                <i class="fas fa-database"></i>
+                                <h4>Time-Series Database</h4>
+                                <p>InfluxDB/TimescaleDB</p>
+                                <ul>
+                                    <li>Request details</li>
+                                    <li>Detection results</li>
+                                    <li>Actions taken</li>
+                                </ul>
+                                <p><strong>Indexing:</strong> IP, Type, Timestamp, Action</p>
+                                <p><strong>Retention:</strong> Raw: 30 days, Aggregated: 1 year</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flow-arrow">
+                        <div class="arrow-line"></div>
+                        <div class="arrow-head"></div>
+                    </div>
+
+                    <!-- Layer 7: Dashboard & Analytics -->
+                    <div class="workflow-stage dashboard-stage" data-stage="7">
+                        <div class="stage-header">
+                            <div class="stage-number">7</div>
+                            <h3>Dashboard & Analytics</h3>
+                        </div>
+                        <div class="stage-content">
+                            <div class="module">
+                                <i class="fas fa-chart-bar"></i>
+                                <h4>Visualizations</h4>
+                                <ul>
+                                    <li>Attack timeline (trends)</li>
+                                    <li>Attack type distribution</li>
+                                    <li>Top attacking IPs (map)</li>
+                                    <li>Success vs Attempt ratio</li>
+                                    <li>Confidence score distribution</li>
+                                </ul>
+                            </div>
+                            <div class="module">
+                                <i class="fas fa-filter"></i>
+                                <h4>Features</h4>
+                                <ul>
+                                    <li>Filter by IP/Type/Date</li>
+                                    <li>Export CSV/JSON</li>
+                                    <li>PCAP analysis results</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flow-arrow">
+                        <div class="arrow-line"></div>
+                        <div class="arrow-head"></div>
+                    </div>
+
+                    <!-- Layer 8: Exported Reports -->
+                    <div class="workflow-stage reports" data-stage="8">
+                        <div class="stage-header">
+                            <div class="stage-number">8</div>
+                            <h3>Exported Reports</h3>
+                        </div>
+                        <div class="stage-content">
+                            <div class="module">
+                                <i class="fas fa-file-export"></i>
+                                <h4>CSV/JSON</h4>
+                                <p>Filtered Results</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Loop -->
+                    <div class="feedback-loop">
+                        <div class="feedback-arrow"></div>
+                        <div class="feedback-label">
+                            <i class="fas fa-sync-alt"></i>
+                            Model Retraining Feedback Loop
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Control Panel -->
+                <div class="workflow-controls">
+                    <button class="btn btn-primary" id="animateWorkflow">
+                        <i class="fas fa-play"></i> Animate Workflow
+                    </button>
+                    <button class="btn btn-secondary" id="resetWorkflow">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section id="demo" class="section">
+        <div class="container">
+            <h1 class="section-title">Live Detection Demo</h1>
+            <p class="section-subtitle">Watch the system detect attacks in real-time</p>
+
+            <div class="demo-container">
+                <!-- Input Panel -->
+                <div class="demo-panel">
+                    <h3><i class="fas fa-upload"></i> Input</h3>
+                    <div class="demo-input">
+                        <label>Upload PCAP File or Enter URL</label>
+                        <div class="file-upload">
+                            <input type="file" id="pcapFile" accept=".pcap,.pcapng">
+                            <label for="pcapFile" class="file-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Choose PCAP File</span>
+                            </label>
+                        </div>
+                        <div class="url-input">
+                            <textarea id="urlInput" placeholder="Or paste URLs here (one per line)..."></textarea>
+                        </div>
+                        <button class="btn btn-primary" id="analyzeBtn">
+                            <i class="fas fa-search"></i> Analyze
+                        </button>
+                        <button class="btn btn-secondary" id="loadSampleBtn">
+                            <i class="fas fa-vial"></i> Load Sample Attacks
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Processing Panel -->
+                <div class="demo-panel">
+                    <h3><i class="fas fa-cogs"></i> Processing</h3>
+                    <div class="processing-steps">
+                        <div class="step" data-step="1">
+                            <div class="step-icon"><i class="fas fa-file-import"></i></div>
+                            <div class="step-info">
+                                <h4>Parsing PCAP</h4>
+                                <div class="progress-bar"><div class="progress"></div></div>
+                            </div>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-icon"><i class="fas fa-filter"></i></div>
+                            <div class="step-info">
+                                <h4>Preprocessing</h4>
+                                <div class="progress-bar"><div class="progress"></div></div>
+                            </div>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="step-info">
+                                <h4>Rule Matching</h4>
+                                <div class="progress-bar"><div class="progress"></div></div>
+                            </div>
+                        </div>
+                        <div class="step" data-step="4">
+                            <div class="step-icon"><i class="fas fa-brain"></i></div>
+                            <div class="step-info">
+                                <h4>ML Detection</h4>
+                                <div class="progress-bar"><div class="progress"></div></div>
+                            </div>
+                        </div>
+                        <div class="step" data-step="5">
+                            <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="step-info">
+                                <h4>Results Ready</h4>
+                                <div class="progress-bar"><div class="progress"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="demo-panel full-width">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Detection Results</h3>
+                    <div class="results-container">
+                        <div class="results-summary">
+                            <div class="summary-card">
+                                <div class="summary-number" id="totalRequests">0</div>
+                                <div class="summary-label">Total Requests</div>
+                            </div>
+                            <div class="summary-card alert">
+                                <div class="summary-number" id="threatsDetected">0</div>
+                                <div class="summary-label">Threats Detected</div>
+                            </div>
+                            <div class="summary-card warning">
+                                <div class="summary-number" id="suspiciousRequests">0</div>
+                                <div class="summary-label">Suspicious</div>
+                            </div>
+                            <div class="summary-card success">
+                                <div class="summary-number" id="cleanRequests">0</div>
+                                <div class="summary-label">Clean</div>
+                            </div>
+                        </div>
+
+                        <div class="results-table-container">
+                            <table class="results-table" id="resultsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>Source IP</th>
+                                        <th>URL</th>
+                                        <th>Attack Type</th>
+                                        <th>Confidence</th>
+                                        <th>Action</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="export-buttons">
+                            <button class="btn btn-secondary" id="exportCSV">
+                                <i class="fas fa-file-csv"></i> Export CSV
+                            </button>
+                            <button class="btn btn-secondary" id="exportJSON">
+                                <i class="fas fa-file-code"></i> Export JSON
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="section">
+        <div class="container">
+            <h1 class="section-title">Analytics Dashboard</h1>
+            <p class="section-subtitle">Real-time threat intelligence and insights</p>
+
+            <div class="dashboard-grid">
+                <!-- Attack Timeline -->
+                <div class="dashboard-card full">
+                    <h3><i class="fas fa-chart-line"></i> Attack Timeline (Last 24 Hours)</h3>
+                    <canvas id="timelineChart"></canvas>
+                </div>
+
+                <!-- Attack Distribution -->
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-chart-pie"></i> Attack Type Distribution</h3>
+                    <canvas id="distributionChart"></canvas>
+                </div>
+
+                <!-- Top Attackers -->
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-users"></i> Top Attacking IPs</h3>
+                    <div class="top-list" id="topAttackers">
+                        <!-- Will be populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Success Rate -->
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-percentage"></i> Attack Success vs Attempts</h3>
+                    <canvas id="successChart"></canvas>
+                </div>
+
+                <!-- Confidence Distribution -->
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-tachometer-alt"></i> Confidence Score Distribution</h3>
+                    <canvas id="confidenceChart"></canvas>
+                </div>
+
+                <!-- Geographic Map -->
+                <div class="dashboard-card full">
+                    <h3><i class="fas fa-globe"></i> Attack Origin Map</h3>
+                    <div class="map-container" id="attackMap">
+                        <!-- Simplified world map visualization -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="dashboard-filters">
+                <h3><i class="fas fa-filter"></i> Filters</h3>
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label>Date Range</label>
+                        <select id="dateFilter">
+                            <option value="1h">Last Hour</option>
+                            <option value="24h" selected>Last 24 Hours</option>
+                            <option value="7d">Last 7 Days</option>
+                            <option value="30d">Last 30 Days</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Attack Type</label>
+                        <select id="attackTypeFilter">
+                            <option value="all">All Types</option>
+                            <option value="sql-injection">SQL Injection</option>
+                            <option value="xss">XSS</option>
+                            <option value="command-injection">Command Injection</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>IP Address</label>
+                        <input type="text" id="ipFilter" placeholder="e.g., 192.168.1.1">
+                    </div>
+                    <button class="btn btn-primary" id="applyFilters">
+                        <i class="fas fa-check"></i> Apply Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Modal -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Attack Details</h2>
+            <div class="modal-body" id="modalBody">
+                <!-- Details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-info-circle"></i>
+        <span id="toastMessage"></span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
