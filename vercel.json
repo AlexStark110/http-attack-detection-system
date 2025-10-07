@@ -1,4 +1,5 @@
 {
-    "name": "attack-detector",
-    "version": 2
+    "name": "attack-detector-demo",
+    "version": 2,
+    "alias": ["attack-detector-demo.vercel.app"]
 }
