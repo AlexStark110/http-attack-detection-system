@@ -1,6 +1,8 @@
 # HTTP Attack Detection System 🛡️
 
 > **Live Demo:** [https://http-attack-detection-system-4qjauj7o5-alexstark110s-projects.vercel.app](https://http-attack-detection-system-4qjauj7o5-alexstark110s-projects.vercel.app)
+> 
+> **GitHub Repository:** [https://github.com/AlexStark110/http-attack-detection-system](https://github.com/AlexStark110/http-attack-detection-system)
 
 An intelligent, real-time HTTP-based attack detection system featuring a **multi-layer hybrid architecture** that combines rule-based pattern matching with machine learning for comprehensive cybersecurity threat detection.
 
@@ -79,7 +81,7 @@ Visit the deployed application: **[Live Demo](https://http-attack-detection-syst
 ### Option 2: Run Locally
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/http-attack-detection-system.git
+git clone https://github.com/AlexStark110/http-attack-detection-system.git
 cd http-attack-detection-system
 
 # Start local server
@@ -217,9 +219,10 @@ MIT License - Feel free to use this project for learning and portfolio purposes.
 
 ## 👤 **Author**
 
-**Developed by:** Rudransh  
+**Developed by:** AlexStark110  
 **Purpose:** Cybersecurity portfolio demonstration  
-**Contact:** [Your LinkedIn/Email]
+**GitHub:** [https://github.com/AlexStark110](https://github.com/AlexStark110)  
+**Live Demo:** [View Project](https://http-attack-detection-system-4qjauj7o5-alexstark110s-projects.vercel.app)
 
 ## 🙏 **Acknowledgments**
 
