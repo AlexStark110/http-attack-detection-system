@@ -220,6 +220,7 @@ MIT License - Feel free to use this project for learning and portfolio purposes.
 ## 👤 **Author**
 
 **Developed by:** Rudransh Srivastava 
+
 **Purpose:** Cybersecurity portfolio demonstration  
 **GitHub:** [https://github.com/AlexStark110](https://github.com/AlexStark110)  
 **Live Demo:** [View Project](https://http-attack-detection-system-4qjauj7o5-alexstark110s-projects.vercel.app)
