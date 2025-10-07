@@ -1,6 +1,6 @@
 # HTTP Attack Detection System 🛡️
 
-> **Live Demo:** [https://http-attack-detection-system-4qjauj7o5-alexstark110s-projects.vercel.app](https://http-attack-detection-system-4qjauj7o5-alexstark110s-projects.vercel.app)
+> **Live Demo:** [https://http-attack-detection-system.vercel.app](https://http-attack-detection-system.vercel.app)
 > 
 > **GitHub Repository:** [https://github.com/AlexStark110/http-attack-detection-system](https://github.com/AlexStark110/http-attack-detection-system)
 
